@@ -1,6 +1,7 @@
-https://github.com/pyrogram/pyrogram/archive/master.zip
+pyrogram
 tgcrypto
 aiohttp
 cchardet
 aiodns
+selenium
 python-dotenv
