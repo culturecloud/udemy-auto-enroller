@@ -9,23 +9,21 @@ loop = get_event_loop()
 
 async def start_services():
     print('\n')
-    print('------------------- Initalizing Telegram Clients -------------------')
+    print('[+] Initalizing Telegram Clients ...')
     await user.start()
-    print('----------------------------- DONE -----------------------------')
+    print('[√] DONE')
     print('\n')
-    print('-------------------- Initalizing Web Server --------------------')
+    print('[+] Initalizing Web Server ...')
     app = web.AppRunner(await web_server())
     await app.setup()
     try:
         await web.TCPSite(app, "0.0.0.0", "8080").start()
     except:
-        sys.exit("Couldn\'t bind the app on specified host or port. Please check if the specified host is valid for your machine and make sure the port is empty.")
-    print('----------------------------- DONE -----------------------------')
+        sys.exit()
+    print('[√] DONE')
     print('\n')
-    print('----------------------- Service Started -----------------------')
     print('Pyrogram Client => {} (@{})'.format(user_dict.first_name, user_dict.username))
     print('Server FQDN => {}'.format(env.FQDN))
-    print('---------------------------------------------------------------')
     await idle()
 
 if __name__ == '__main__':

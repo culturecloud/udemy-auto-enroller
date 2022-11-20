@@ -1,7 +1,0 @@
-pyrogram
-tgcrypto
-aiohttp
-cchardet
-aiodns
-selenium
-python-dotenv

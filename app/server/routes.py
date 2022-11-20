@@ -2,7 +2,6 @@ import time
 from aiohttp import web
 from app import user_dict
 from app import StartTime
-from app.utils.time_format import get_readable_time
 
 routes = web.RouteTableDef()
 
